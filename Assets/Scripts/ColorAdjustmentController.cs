@@ -6,7 +6,7 @@ public class ColorAdjustmentController : MonoBehaviour
 {
     public Volume globalVolume;
 
-    [Header("Textures LUT (Arrossega les de GitHub)")]
+    [Header("Textures LUT")]
     public Texture2D lutProtanopia;
     public Texture2D lutDeuteranopia;
     public Texture2D lutTritanopia;
@@ -16,13 +16,23 @@ public class ColorAdjustmentController : MonoBehaviour
 
     void Start()
     {
-        if (globalVolume != null && globalVolume.profile.TryGet(out colorLookup))
+        // Verificamos que el objeto Global Volume esté asignado
+        if (globalVolume != null)
         {
-            colorLookup.active = false;
+            // Intentamos obtener el perfil y el efecto Color Lookup
+            if (globalVolume.profile.TryGet<ColorLookup>(out colorLookup))
+            {
+                colorLookup.active = false;
+                Debug.Log("¡Color Lookup configurado correctamente!");
+            }
+            else
+            {
+                Debug.LogError("Error: El perfil del Global Volume NO tiene el efecto 'Color Lookup' añadido.");
+            }
         }
         else
         {
-            Debug.LogError("Error: No s'ha trobat 'Color Lookup' al Global Volume!");
+            Debug.LogError("Error: No has arrastrado el objeto 'Global Volume' al script en el Inspector.");
         }
     }
 
