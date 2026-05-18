@@ -3659,7 +3659,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 481209992877951847, guid: 4b7d2f5ad44674547b9da810fd4bc4bf, type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: CanvasMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 481209992877951847, guid: 4b7d2f5ad44674547b9da810fd4bc4bf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2988041039597760685, guid: 4b7d2f5ad44674547b9da810fd4bc4bf, type: 3}
       propertyPath: m_AnchorMax.x
