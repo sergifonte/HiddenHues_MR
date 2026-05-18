@@ -21,8 +21,8 @@ MonoBehaviour:
       m_GuidLow: 5648819758991010546
       m_GuidHigh: 2687894474012501180
     m_SerializedTextureGuid:
-      m_GuidLow: 0
-      m_GuidHigh: 0
+      m_GuidLow: 12988848960267009831
+      m_GuidHigh: 11766810288502442923
     m_Size: {x: 0.06, y: 0.06}
     m_SpecifySize: 1
     m_Name: PatroVermell
@@ -31,8 +31,8 @@ MonoBehaviour:
       m_GuidLow: 4840908491353973801
       m_GuidHigh: 619384969256498345
     m_SerializedTextureGuid:
-      m_GuidLow: 0
-      m_GuidHigh: 0
+      m_GuidLow: 16480227286179483662
+      m_GuidHigh: 4589806165183541402
     m_Size: {x: 0.06, y: 0.06}
     m_SpecifySize: 1
     m_Name: PatroGroc
@@ -41,8 +41,8 @@ MonoBehaviour:
       m_GuidLow: 4839722409411580001
       m_GuidHigh: 7915265633540313728
     m_SerializedTextureGuid:
-      m_GuidLow: 0
-      m_GuidHigh: 0
+      m_GuidLow: 14143681779191986750
+      m_GuidHigh: 15353464143651774043
     m_Size: {x: 0.06, y: 0.06}
     m_SpecifySize: 1
     m_Name: PatroBlau
@@ -51,8 +51,8 @@ MonoBehaviour:
       m_GuidLow: 5319988477087699538
       m_GuidHigh: 8166333082985835392
     m_SerializedTextureGuid:
-      m_GuidLow: 0
-      m_GuidHigh: 0
+      m_GuidLow: 3785708029555013849
+      m_GuidHigh: 8870800846644439369
     m_Size: {x: 0.06, y: 0.06}
     m_SpecifySize: 1
     m_Name: PatroVerd

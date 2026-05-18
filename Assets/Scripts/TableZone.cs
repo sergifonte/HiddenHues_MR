@@ -5,18 +5,20 @@ using System.Collections.Generic;
 public class TableZone : MonoBehaviour
 {
     public ARPlaneManager planeManager;
+    // Llista autom√†tica dels cubs que toquen la taula
     public List<TrackedCube> cubesOnTable = new List<TrackedCube>();
 
     void Update()
     {
-        // Si encara no hem fixat la taula, busquem un pla horitzontal
+        if (planeManager == null) return;
+
+        // El collider es mou autom√†ticament on detecti la taula real
         foreach (var plane in planeManager.trackables)
         {
             if (plane.alignment == UnityEngine.XR.ARSubsystems.PlaneAlignment.HorizontalUp)
             {
-                // Posem la zona de detecciÛ sobre la taula detectada
                 transform.position = plane.center;
-                break;
+                break; 
             }
         }
     }
@@ -27,7 +29,6 @@ public class TableZone : MonoBehaviour
         if (cube != null && !cubesOnTable.Contains(cube))
         {
             cubesOnTable.Add(cube);
-            GameManagerMR.Instance.OnCubePlaced(); // Avisem que hi ha un cub mÈs
         }
     }
 
@@ -37,7 +38,12 @@ public class TableZone : MonoBehaviour
         if (cube != null && cubesOnTable.Contains(cube))
         {
             cubesOnTable.Remove(cube);
-            GameManagerMR.Instance.OnCubeLifted(cube);
+            
+            // Avisem al GameManager que alg√∫ ha AIXECAT un cub
+            if (GameManagerMR.Instance != null)
+            {
+                GameManagerMR.Instance.OnCubeLifted(cube);
+            }
         }
     }
 }

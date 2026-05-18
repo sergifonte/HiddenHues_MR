@@ -8,8 +8,11 @@ public class GameFlowManager : MonoBehaviour
     public GameObject canvasMenuPrincipal;
     public GameObject canvasPantallaPrincipal;
 
-    [Header("Scripts de Lògica")]
+    [Header("Scripts de LÃ²gica")]
     public GameManagerMR gameManagerScript;
+
+    [Header("Objectes del Joc (Opcional)")]
+    public GameObject objecteGAME; // Arrossega aquÃ­ l'objecte GAME de la Hierarchy si vols desactivar-lo sencer
 
     private void Awake()
     {
@@ -18,7 +21,6 @@ public class GameFlowManager : MonoBehaviour
 
     private void Start()
     {
-        // Al començar, només es veu el Menú Principal
         MostrarMenuPrincipal();
     }
 
@@ -27,31 +29,51 @@ public class GameFlowManager : MonoBehaviour
         canvasMenuPrincipal.SetActive(true);
         canvasPantallaPrincipal.SetActive(false);
 
-        // Si l'usuari torna al menú, parem la partida si estava en marxa
         if (gameManagerScript != null)
         {
             gameManagerScript.StopAllCoroutines();
         }
+        
+        // Si vols que l'objecte GAME estigui apagat al menÃº del principi:
+        if (objecteGAME != null) objecteGAME.SetActive(false);
     }
 
-    // Aquest botó està al Menú Principal (Play) i t'obre la pantalla de configuració/joc
     public void ObrirPantallaPrincipal()
     {
         canvasMenuPrincipal.SetActive(false);
         canvasPantallaPrincipal.SetActive(true);
+        
+        // Quan entrem a la pantalla dels filtres, activem el GAME perquÃ¨ l'ImageTracking comenci a detectar cubs
+        if (objecteGAME != null) objecteGAME.SetActive(true);
     }
 
     public void PremerBotoComencarJoc()
     {
         if (gameManagerScript != null)
         {
-            gameManagerScript.StartGame();
+            gameManagerScript.IntentarComencarJoc();
         }
+    }
+
+    // Aquesta Ã©s la funciÃ³ que s'ha d'executar quan es premi la fletxa d'enrere
+    public void PremerBotoTornarEnrere()
+    {
+        if (gameManagerScript != null && gameManagerScript.IsGamePlaying())
+        {
+            // 1. Apaguem la lÃ²gica del joc, netegem text i reactivem el botÃ³ Go To Level
+            gameManagerScript.NetejarIApagarJoc();
+        }
+
+        // 2. Si vols desactivar del tot l'objecte GAME (amb la TableZone i els cubs) en sortir:
+        if (objecteGAME != null) objecteGAME.SetActive(false);
+
+        // 3. Portem l'usuari directament al menÃº de botons de Play i Exit
+        MostrarMenuPrincipal();
     }
 
     public void SortirDeLApp()
     {
-        Debug.Log("Sortint de l'aplicació...");
+        Debug.Log("Sortint de l'aplicaciÃ³...");
         Application.Quit();
     }
 }
