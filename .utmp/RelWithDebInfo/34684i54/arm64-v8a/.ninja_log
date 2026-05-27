@@ -1,0 +1,10 @@
+# ninja log v5
+46	3433	8016089889616379	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	2aaed102d63740d8
+12	3556	8016089890894576	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	136411adeb2845e9
+78	3581	8016089891004613	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	a03eb65eb1d7c100
+26	3655	8016089892132444	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	a4d53899b971e011
+101	3685	8016089892378253	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	87d5d0d2fb7dfa3b
+125	4070	8016089896183690	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	a9cbce1df24a86b2
+1	4351	8016089899098589	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	f0a0d454f674255a
+37	4461	8016089900286590	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	cd188714f821f8f1
+4461	4661	8016089902332786	C:/Users/ARTUR/OneDrive/Documentos/Sergi/UPC/3r/VR/HiddenHues_MR/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/34684i54/obj/arm64-v8a/libgame.so	e6b3f9a554abc70f
